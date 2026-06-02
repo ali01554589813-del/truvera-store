@@ -14,12 +14,8 @@
 <header>
     <h1>TRUVERA STORE</h1>
 
-    <nav class="navbar">
-        <a href="index.html">الرئيسية</a>
-        <a href="products.html">المنتجات</a>
-        <a href="cart.html">السلة</a>
-        <a href="favorites.html">المفضلة</a>
-    </nav>
+    <a href="cart.html">السلة 🛒 (<span id="cartCount">0</span>)</a>
+    
 </header>
 
 <main class="center">
@@ -27,6 +23,10 @@
     <p>ابدأ التسوق الآن</p>
     <a class="btn" href="products.html">تصفح المنتجات</a>
 </main>
+<div class="hero">
+    <h2>أفضل المنتجات بأفضل الأسعار 🛒</h2>
+    <input type="text" id="search" placeholder="ابحث عن منتج..." onkeyup="searchProducts()">
+</div>
 
 <script src="script.js"></script>
 </body>
