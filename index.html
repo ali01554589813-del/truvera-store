@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRUVERA STORE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="toast"></div>
+<header>
+    <h1>TRUVERA STORE</h1>
+
+    <input
+        type="text"
+        id="search"
+        placeholder="ابحث عن منتج..."
+        onkeyup="searchProducts()">
+
+    <div class="categories">
+        <button onclick="filterProducts('all')">الكل</button>
+        <button onclick="filterProducts('watch')">ساعات</button>
+        <button onclick="filterProducts('glasses')">نظارات</button>
+        <button onclick="filterProducts('shoes')">أحذية</button>
+    </div>
+</header>
+<button onclick="showFavorites()">
+❤️ المفضلة
+</button>
+
+<main>
+
+<section class="products" id="products">
+
+<div class="product" data-type="watch">
+    <img src="https://via.placeholder.com/250">
+    <h3>ساعة فاخرة</h3>
+    <p>500 EGP</p>
+    <button onclick="addToCart('ساعة فاخرة',500)">أضف للسلة</button>
+</div>
+
+<div class="product" data-type="glasses">
+    <img src="https://via.placeholder.com/250">
+    <h3>نظارة شمسية</h3>
+    <p>300 EGP</p>
+    <button onclick="addToCart('نظارة شمسية',300)">أضف للسلة</button>
+</div>
+
+<div class="product" data-type="shoes">
+    <img src="https://via.placeholder.com/250">
+    <h3>حذاء رياضي</h3>
+    <p>800 EGP</p>
+    <button onclick="addToCart('حذاء رياضي',800)">أضف للسلة</button>
+</div>
+
+</section>
+
+<section class="cart">
+    <h3 style="text-align:center;">🛒 سلة المشتريات</h3>
+
+    <div id="cartItems">
+        لا توجد منتجات
+    </div>
+<div id="favoritesBox" style="display:none; background:#111c36; margin:15px; padding:15px; border-radius:10px;">
+    <h3>❤️ المنتجات المفضلة</h3>
+    <div id="favoritesList"></div>
+</div>
+
+    <h3 id="total">
+        الإجمالي: 0 EGP
+    </h3>
+
+    <button onclick="checkout()">
+        إتمام الطلب
+    </button>
+</section>
+
+
+<section id="checkoutBox" class="checkout hidden">
+    <h2>إتمام الطلب</h2>
+
+    <input id="name" placeholder="الاسم">
+    <input id="phone" placeholder="رقم الهاتف">
+    <input id="address" placeholder="العنوان">
+
+    <button onclick="submitOrder()">
+        تأكيد الطلب
+    </button>
+</section>
+
+</main>
+<button onclick="checkout()">
+إتمام الطلب
+</button>
+<div id="successMsg" style="display:none; background:#16a34a; padding:10px; margin-top:10px; border-radius:8px; color:white;">
+    ✅ تم استلام طلبك بنجاح وسنتواصل معك قريبًا
+</div>
