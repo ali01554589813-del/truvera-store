@@ -8,9 +8,18 @@
 </head>
 
 <body>
+
 <div id="toast"></div>
+
 <header>
     <h1>TRUVERA STORE</h1>
+
+    <nav class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="cart.html">السلة</a>
+        <a href="favorites.html">المفضلة</a>
+    </nav>
 
     <input
         type="text"
@@ -25,12 +34,12 @@
         <button onclick="filterProducts('shoes')">أحذية</button>
     </div>
 </header>
-<button onclick="showFavorites()">
-❤️ المفضلة
-</button>
+
+<button onclick="checkout()">إتمام الطلب</button>
 
 <main>
 
+<!-- المنتجات -->
 <section class="products" id="products">
 
 <div class="product" data-type="watch">
@@ -38,6 +47,7 @@
     <h3>ساعة فاخرة</h3>
     <p>500 EGP</p>
     <button onclick="addToCart('ساعة فاخرة',500)">أضف للسلة</button>
+    <button onclick="toggleFav('ساعة فاخرة')">❤️</button>
 </div>
 
 <div class="product" data-type="glasses">
@@ -45,6 +55,7 @@
     <h3>نظارة شمسية</h3>
     <p>300 EGP</p>
     <button onclick="addToCart('نظارة شمسية',300)">أضف للسلة</button>
+    <button onclick="toggleFav('نظارة شمسية')">❤️</button>
 </div>
 
 <div class="product" data-type="shoes">
@@ -52,31 +63,29 @@
     <h3>حذاء رياضي</h3>
     <p>800 EGP</p>
     <button onclick="addToCart('حذاء رياضي',800)">أضف للسلة</button>
+    <button onclick="toggleFav('حذاء رياضي')">❤️</button>
 </div>
 
 </section>
 
+<!-- السلة -->
 <section class="cart">
     <h3 style="text-align:center;">🛒 سلة المشتريات</h3>
 
-    <div id="cartItems">
-        لا توجد منتجات
-    </div>
+    <div id="cartItems">لا توجد منتجات</div>
+
+    <h3 id="total">الإجمالي: 0 EGP</h3>
+
+    <button onclick="checkout()">إتمام الطلب</button>
+</section>
+
+<!-- المفضلة -->
 <div id="favoritesBox" style="display:none; background:#111c36; margin:15px; padding:15px; border-radius:10px;">
     <h3>❤️ المنتجات المفضلة</h3>
     <div id="favoritesList"></div>
 </div>
 
-    <h3 id="total">
-        الإجمالي: 0 EGP
-    </h3>
-
-    <button onclick="checkout()">
-        إتمام الطلب
-    </button>
-</section>
-
-
+<!-- checkout -->
 <section id="checkoutBox" class="checkout hidden">
     <h2>إتمام الطلب</h2>
 
@@ -84,15 +93,15 @@
     <input id="phone" placeholder="رقم الهاتف">
     <input id="address" placeholder="العنوان">
 
-    <button onclick="submitOrder()">
-        تأكيد الطلب
-    </button>
+    <button onclick="submitOrder()">تأكيد الطلب</button>
 </section>
 
-</main>
-<button onclick="checkout()">
-إتمام الطلب
-</button>
+<!-- نجاح -->
 <div id="successMsg" style="display:none; background:#16a34a; padding:10px; margin-top:10px; border-radius:8px; color:white;">
     ✅ تم استلام طلبك بنجاح وسنتواصل معك قريبًا
 </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
