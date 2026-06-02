@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TRUVERA STORE</title>
+<title>المنتجات</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,7 +12,7 @@
 <div id="toast"></div>
 
 <header>
-    <h1>TRUVERA STORE</h1>
+    <h1>المنتجات</h1>
 
     <nav class="navbar">
         <a href="index.html">الرئيسية</a>
@@ -22,10 +22,22 @@
     </nav>
 </header>
 
-<main class="center">
-    <h2>أهلاً بك في المتجر 🛒</h2>
-    <p>ابدأ التسوق الآن</p>
-    <a class="btn" href="products.html">تصفح المنتجات</a>
+<main class="products">
+
+<div class="product">
+    <h3>ساعة فاخرة</h3>
+    <p>500 EGP</p>
+    <button onclick="addToCart('ساعة',500)">أضف للسلة</button>
+    <button onclick="toggleFav('ساعة')">❤️</button>
+</div>
+
+<div class="product">
+    <h3>نظارة</h3>
+    <p>300 EGP</p>
+    <button onclick="addToCart('نظارة',300)">أضف للسلة</button>
+    <button onclick="toggleFav('نظارة')">❤️</button>
+</div>
+
 </main>
 
 <script src="script.js"></script>
