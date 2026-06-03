@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>تفاصيل المنتج</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="toast"></div>
+
+<header>
+    <h1>تفاصيل المنتج</h1>
+</header>
+
+<main class="cart">
+
+<h2 id="productName"></h2>
+<p id="productPrice"></p>
+
+<button id="addBtn">أضف للسلة 🛒</button>
+
+</main>
+
+<script src="script.js"></script>
+
+<script>
+let params = new URLSearchParams(window.location.search);
+
+let name = params.get("name");
+let price = params.get("price");
+
+document.getElementById("productName").innerText = name;
+document.getElementById("productPrice").innerText = price + " EGP";
+
+document.getElementById("addBtn").onclick = function(){
+    addToCart(name, Number(price));
+    showToast("تمت الإضافة 🛒");
+};
+</script>
+
+</body>
+</html>
