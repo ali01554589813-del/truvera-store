@@ -3,42 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>السلة</title>
+<title>سلة المشتريات | TRUVERA STORE</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="toast"></div>
+<header class="header">
 
-<header>
-    <h1>السلة 🛒</h1>
-    
-<a href="cart.html">السلة 🛒 (<span id="cartCount">0</span>)</a>
+    <div class="logo">
+        <h1>TRUVERA STORE</h1>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="cart.html">
+            السلة 🛒 (<span id="cartCount">0</span>)
+        </a>
+    </nav>
 
 </header>
 
-<main class="cart">
-    <div id="cartItems">لا توجد منتجات</div>
-    <h3 id="total">الإجمالي: 0 EGP</h3>
-
-    <button onclick="checkout()">إتمام الطلب</button>
-</main>
-
-<section id="checkoutBox" class="hidden">
-    <input id="name" placeholder="الاسم">
-    <input id="phone" placeholder="الهاتف">
-    <button onclick="submitOrder()">تأكيد</button>
+<section class="hero">
+    <h2>سلة المشتريات</h2>
+    <p>راجع منتجاتك قبل إتمام الطلب</p>
 </section>
 
-<div id="successMsg" class="hidden">
-    تم إرسال الطلب بنجاح ✔
-</div>
+<main class="cart">
 
-<a href="checkout.html">
-    <button>إتمام الشراء</button>
-</a>
+    <div id="cartItems">
+        جاري تحميل المنتجات...
+    </div>
+
+    <div class="cart-summary">
+
+        <h2 id="total">
+            الإجمالي: 0 EGP
+        </h2>
+
+        <a href="checkout.html" class="btn">
+            متابعة إلى الدفع
+        </a>
+
+    </div>
+
+</main>
 
 <script src="script.js"></script>
+
+<script>
+
+if(typeof renderCart === "function"){
+    renderCart();
+}
+
+if(typeof updateCartCount === "function"){
+    updateCartCount();
+}
+
+</script>
+
 </body>
 </html>

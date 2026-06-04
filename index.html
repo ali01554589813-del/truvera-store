@@ -4,30 +4,110 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TRUVERA STORE</title>
-<link rel="stylesheet" href="style.css">
-</head>
 
+<link rel="stylesheet" href="style.css">
+
+</head>
 <body>
 
-<div id="toast"></div>
+<header class="header">
 
-<header>
-    <h1>TRUVERA STORE</h1>
+    <div class="logo">
+        <h1>TRUVERA STORE</h1>
+    </div>
 
-    <a href="cart.html">السلة 🛒 (<span id="cartCount">0</span>)</a>
-    
+    <nav class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="favorites.html">المفضلة ❤️</a>
+        <a href="cart.html">
+            السلة 🛒
+            (<span id="cartCount">0</span>)
+        </a>
+    </nav>
+
 </header>
 
-<main class="center">
-    <h2>أهلاً بك في المتجر 🛒</h2>
-    <p>ابدأ التسوق الآن</p>
-    <a class="btn" href="products.html">تصفح المنتجات</a>
-</main>
-<div class="hero">
-    <h2>أفضل المنتجات بأفضل الأسعار 🛒</h2>
-    <input type="text" id="search" placeholder="ابحث عن منتج..." onkeyup="searchProducts()">
-</div>
+<section class="hero">
+
+    <h2>أفضل المنتجات بأفضل الأسعار</h2>
+
+    <p>
+        ساعات - نظارات - أحذية - إكسسوارات
+    </p>
+
+    <a href="products.html" class="btn">
+        ابدأ التسوق الآن
+    </a>
+
+</section>
+
+<section class="features">
+
+    <div class="feature">
+        <h3>🚚 شحن سريع</h3>
+        <p>توصيل لجميع المحافظات</p>
+    </div>
+
+    <div class="feature">
+        <h3>💳 دفع آمن</h3>
+        <p>طرق دفع متعددة</p>
+    </div>
+
+    <div class="feature">
+        <h3>⭐ جودة عالية</h3>
+        <p>منتجات مختارة بعناية</p>
+    </div>
+
+</section>
+
+<section class="categories">
+
+    <h2>الأقسام</h2>
+
+    <div class="category-grid">
+
+        <a href="products.html" class="category-card">
+            ⌚ ساعات
+        </a>
+
+        <a href="products.html" class="category-card">
+            🕶 نظارات
+        </a>
+
+        <a href="products.html" class="category-card">
+            👟 أحذية
+        </a>
+
+        <a href="products.html" class="category-card">
+            🎁 إكسسوارات
+        </a>
+
+    </div>
+
+</section>
+
+<section class="about">
+
+    <h2>عن المتجر</h2>
+
+    <p>
+        TRUVERA STORE متجر إلكتروني حديث
+        يوفر منتجات مميزة بجودة عالية
+        وأسعار تنافسية.
+    </p>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 TRUVERA STORE
+    </p>
+
+</footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>

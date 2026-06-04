@@ -3,38 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>المنتجات</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<title>المنتجات - TRUVERA STORE</title>
 
+<link rel="stylesheet" href="style.css">
+
+</head>
 <body>
 
-<div id="toast"></div>
+<header class="header">
 
-<header>
-    <h1>المنتجات</h1>
+    <div class="logo">
+        <h1>TRUVERA STORE</h1>
+    </div>
 
-  <a href="cart.html">السلة 🛒 (<span id="cartCount">0</span>)</a>
+    <nav class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="favorites.html">المفضلة ❤️</a>
+        <a href="cart.html">
+            السلة 🛒
+            (<span id="cartCount">0</span>)
+        </a>
+    </nav>
+
 </header>
 
-<main class="products">
+<section class="hero">
+    <h2>منتجاتنا</h2>
+    <p>اختر المنتج المناسب لك</p>
+</section>
 
-<div class="product">
-    <h3>ساعة فاخرة</h3>
-    <p>500 EGP</p>
-    <button onclick="addToCart('ساعة',500)">أضف للسلة</button>
-    <button onclick="toggleFav('ساعة')">❤️</button>
+<div class="products">
+
+    <div class="product">
+        <img src="https://via.placeholder.com/300x300" alt="">
+        <h3>ساعة فاخرة</h3>
+        <p>500 EGP</p>
+
+        <button onclick="addToCart('ساعة فاخرة',500)">
+            أضف للسلة
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/300x300" alt="">
+        <h3>نظارة شمسية</h3>
+        <p>300 EGP</p>
+
+        <button onclick="addToCart('نظارة شمسية',300)">
+            أضف للسلة
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/300x300" alt="">
+        <h3>حذاء رياضي</h3>
+        <p>800 EGP</p>
+
+        <button onclick="addToCart('حذاء رياضي',800)">
+            أضف للسلة
+        </button>
+    </div>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/300x300" alt="">
+        <h3>محفظة جلد</h3>
+        <p>250 EGP</p>
+
+        <button onclick="addToCart('محفظة جلد',250)">
+            أضف للسلة
+        </button>
+    </div>
+
 </div>
-
-<div class="product">
-    <h3>نظارة</h3>
-    <p>300 EGP</p>
-    <button onclick="addToCart('نظارة',300)">أضف للسلة</button>
-    <button onclick="toggleFav('نظارة')">❤️</button>
-</div>
-
-</main>
 
 <script src="script.js"></script>
+
 </body>
 </html>

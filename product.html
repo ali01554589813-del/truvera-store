@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تفاصيل المنتج | TRUVERA STORE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <h1>TRUVERA STORE</h1>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="cart.html">
+            السلة 🛒 (<span id="cartCount">0</span>)
+        </a>
+    </nav>
+
+</header>
+
+<div class="product-details">
+
+    <div class="product-image">
+        <img id="productImage"
+        src="https://via.placeholder.com/500x500"
+        alt="Product">
+    </div>
+
+    <div class="product-info">
+
+        <h1 id="productName">
+            ساعة فاخرة
+        </h1>
+
+        <div class="rating">
+            ⭐⭐⭐⭐⭐
+            <span>(4.9)</span>
+        </div>
+
+        <h2 id="productPrice">
+            500 EGP
+        </h2>
+
+        <p class="description">
+            منتج عالي الجودة بتصميم عصري وخامات ممتازة.
+            مناسب للاستخدام اليومي ويتميز بالأناقة والمتانة.
+        </p>
+
+        <button id="addBtn">
+            أضف للسلة 🛒
+        </button>
+
+        <button id="buyBtn">
+            شراء الآن
+        </button>
+
+    </div>
+
+</div>
+
+<section class="related">
+
+    <h2>منتجات مشابهة</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="https://via.placeholder.com/300">
+            <h3>نظارة شمسية</h3>
+            <p>300 EGP</p>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/300">
+            <h3>حذاء رياضي</h3>
+            <p>800 EGP</p>
+        </div>
+
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
+<script>
+
+let params =
+new URLSearchParams(window.location.search);
+
+let name =
+params.get("name") || "ساعة فاخرة";
+
+let price =
+params.get("price") || "500";
+
+document.getElementById("productName").innerText =
+name;
+
+document.getElementById("productPrice").innerText =
+price + " EGP";
+
+document.getElementById("addBtn")
+.onclick = function(){
+
+    addToCart(
+        name,
+        Number(price)
+    );
+
+};
+
+document.getElementById("buyBtn")
+.onclick = function(){
+
+    addToCart(
+        name,
+        Number(price)
+    );
+
+    window.location.href =
+    "checkout.html";
+
+};
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>

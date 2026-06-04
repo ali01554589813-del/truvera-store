@@ -3,76 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>إتمام الطلب</title>
+<title>إتمام الطلب | TRUVERA STORE</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>إتمام الطلب 🧾</h1>
+<header class="header">
+    <div class="logo">
+        <h1>TRUVERA STORE</h1>
+    </div>
+
+    <nav class="navbar">
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="cart.html">السلة</a>
+    </nav>
 </header>
 
-<main class="cart">
+<section class="hero">
+    <h2>إتمام الطلب</h2>
+    <p>أدخل بيانات الشحن لإكمال الطلب</p>
+</section>
 
-<h2>ملخص الطلب</h2>
+<div class="checkout-container">
 
-<div id="orderSummary"></div>
+    <div class="checkout-card">
 
-<h3 id="total">الإجمالي: 0 EGP</h3>
+        <h3>بيانات العميل</h3>
 
-<hr>
+        <input id="name" type="text" placeholder="الاسم الكامل">
 
-<h2>بيانات العميل</h2>
+        <input id="phone" type="tel" placeholder="رقم الهاتف">
 
-<input id="name" placeholder="الاسم الكامل">
-<input id="phone" placeholder="رقم الهاتف">
-<input id="address" placeholder="العنوان الكامل">
+        <input id="address" type="text" placeholder="العنوان">
 
-<button onclick="placeOrder()">تأكيد الطلب</button>
+        <textarea id="notes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
 
-</main>
+    </div>
+
+    <div class="checkout-card">
+
+        <h3>ملخص الطلب</h3>
+
+        <div id="orderSummary">
+            جاري تحميل الطلب...
+        </div>
+
+        <div class="checkout-total">
+            <h2 id="total">
+                الإجمالي: 0 EGP
+            </h2>
+        </div>
+
+        <button onclick="placeOrder()">
+            تأكيد الطلب عبر واتساب
+        </button>
+
+    </div>
+
+</div>
 
 <div id="successMsg" class="hidden">
-    ✅ تم إرسال طلبك بنجاح! سنتواصل معك قريبًا
+    تم تجهيز طلبك بنجاح ✅
 </div>
 
 <script src="script.js"></script>
 
 <script>
+
 function loadOrder(){
 
     let box = document.getElementById("orderSummary");
+
+    if(!box) return;
+
+    box.innerHTML = "";
+
     let total = 0;
 
     cart.forEach(item=>{
-        total += item.price * item.quantity;
+
+        let itemTotal = item.price * item.quantity;
+
+        total += itemTotal;
 
         box.innerHTML += `
-        <p>
-            ${item.name} × ${item.quantity} = ${item.price * item.quantity} EGP
-        </p>
+        <div class="cart-item">
+            <h4>${item.name}</h4>
+            <p>
+                ${item.quantity} × ${item.price} EGP
+            </p>
+        </div>
         `;
     });
 
-    document.getElementById("total").innerText = "الإجمالي: " + total + " EGP";
-}
-
-
-    // رسالة نجاح
-    document.getElementById("successMsg").classList.remove("hidden");
-
-    // تفريغ السلة
-    cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCount();
-
-    setTimeout(()=>{
-        window.location.href = "index.html";
-    }, 3000);
+    document.getElementById("total").innerText =
+    "الإجمالي: " + total + " EGP";
 }
 
 loadOrder();
+
 </script>
 
 </body>
